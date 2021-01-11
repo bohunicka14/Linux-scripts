@@ -1,0 +1,44 @@
+SED vymazavanie
+sed -i 2d subor - vymaze druhy riadok, -i = inplace/bez toho sa to len vypise do konzoly
+sed -ia 2d subor - spravi backup a vytvori subor s menom 'a'
+sed '$d' subor - vymaze posledny riadok
+sed '1,4d' subor - vymaze prvy az stvrty riadok
+sed '1,4!d' subor - vymaze vsetky okrem prveho az stvrteho
+sed '2d;4d' subor - vymaze druhy a stvrty
+sed '/^$/d' subor - vymaze vsetky prazdne riadky
+
+
+
+SED nahradzanie
+sed 's/text1/text2/' subor - nahradi prvy vyskyt test1 za text2 pre kazdy riadok  v subore
+sed 's/text1/text2/g' subor - nahradi vsetky vyskyty
+sed 's/text1/text2/2' subor - nahradi druhy vyskyt
+sed 's/text1/text2/2g' subor - nahradi vsetky vyskyty okrem prveho (v riadku asi)
+sed 's/text1/text2/ ; s/text1/text2/' akoby pipa
+sed '1 s/text1/text2' subor - nahradi text1 za text2 len v prvom riadku suboru
+sed '1,3 s/text1/text2/' subor - prvy az treti
+sed '/slovo/s/text1/text2/' subor - zmeni len riadok kde sa nachadza "slovo" 
+sed -i '///' subor - nahradi priamo v subore
+
+
+SED nahradzanie a vkladanie v praxi
+sed -i "s/text1/$premenna/" subor -  nahradi text textom v premennej, treba uvodzovky!!!
+sed -i "/slovo/a/ text" subor - najde slovo v subore a prida za tento riadok text
+
+c - change, i - insert
+
+SED vkladanie pred a po
+sed "/slovo/a text" subor - za slovo prida text do noveho riadku
+sed "/slovo/i text" subor - pred slovo prida text do noveho riadku
+sed "/slovo/c text" subor - zmeni mi riadok kde je slovo za text
+
+sed -n 1p subor - vypise prvy riadok zo suboru
+sed -n 1,3p subor - vypise prvy az treti
+sed -n "1p;3p" subor - vypise prvy a treti
+bez -n prida prvy a treti riadok do suboru
+
+
+PRIKAZY
+less
+head
+

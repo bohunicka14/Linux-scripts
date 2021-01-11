@@ -1,0 +1,63 @@
+awk '{print}' subor  vypise obsah suboru
+awk '{print}' subor | head   vypise prvych 10 riadkov
+awk '/slovo/ {print}' subor   vypise riadky ktore obsahuju slovo v subore
+awk '{print $1}' subor  vypise len prvy stlpec
+awk '{print $1 $3}' subor  vypise prvy a treti stlpec
+awk '{print $1, $3}' subor  vypise prvy stlpec a streti a prida medzeru medzi ne
+ked das $0 tak vypise vsetky stlpce
+awk '{print NR, $0}' subor  vypise aj cisla riadkov
+awk '{print NF, $0}' subor vypise pocet stlcpov pre kazdy riadok
+awk '{print FS, $0}' subor  prida field separator
+awk 'BEGIN{FS="0";} {print $1}' subor   tymto sa meni field separator a vypise prvy stlpec podla tohto noveho separatora
+RS = record separator
+awk 'BEGIN{RS='0';} {print $0}' subor   zmeni record separator
+
+awk 'BEGIN{RS='0'; ORS="p"} {print $0}' subor  jednak zmeni record separator a vo vypise pouzije na novo nastaveny ORS = output record separator
+mozem aj takto aby vypis bol zalomeny ORS="p\n"
+awk 'BEGIN{FS='0'; OFS="p"} {print $0}' subor  toto iste len s field separatorom
+
+awk 'NR==2 {print NR, $0}' subor  vypise len druhy riadok
+awk 'NR==2, NR==4 {print NR, $0}' subor   vypise druhy az stvrty 
+awk 'NR==2 || NR==4 {print NR, $0}' subor   vypise druhy a stvrty
+aj takto awk 'NR<=2 || NR>=4 {print NR, $0}' subor  vypise vsetky riadky okrem 3
+aj takto awk 'NR>=2 && NR<=4 {print NR, $0}' subor  vypise riadky 2 az 4
+aj takto awk 'BEGIN{od=2;doo=6} NR>=od && NR<=doo {print NR, $0}' subor
+aj takto awk 'NR>2 {print NR, $0}' subor
+
+awk '$2>1 {print $2}' ak je druhe pole vacsie ako 1, vypis druhe pole
+= priradenie
+== porovnanie
+
+
+awk '{$3="user"; print NR , $1, $2, $3}' subor  zmeni treti stlpec na user a vypise prve tri stlpce zo suboru
+
+awk /^slovo/ subor  vypise riadky ktore sa zacinaju slovom
+awk /slovo$/ subor vypise riadky ktore sa koncia slovom
+awk '/j*n/{print}' subor  vypise riadky ktore maju j potom znaky a potom n
+awk '/j.n/{print}' subor  vypise riadky ktore maju j znak n
+awk '/j[au]/{print}' subor vypise riadky ktore obsahuju ja alebo ju
+awk '/j[a-z]/{print}' subor vypise riadky ktore obsahuju ja az jz
+awk '/j[a-z][n]/{print}' subor   subor vypise riadky ktore obsahuju jan az jzn
+awk '/\//{print}' subor  escape pre lomitko
+
+MATIKA
+echo 10 20 30 | awk '{sucet = $1 + $2 + $3; print sucet}'
+echo 10 20 30 70 | awk '{for(i=1;i<=NF;i++) sucet += $i; delenie = sucet / NF; print NF, "Sucet je:" sucet, delenie}'
+
+
+awk '{print "Text" $0}' subor   vypise cely subor a pred kazdy riadok prida "Text"
+alebo aj takto awk '{print "Text "}{print $0}' subor
+awk 'BEGIN{print NR, "Text "}{print NR, $0}' subor   prida "Text " na nulty riadok
+awk 'BEGIN{print NR, "Toto je zaciatok "}{print NR, $0}END{print NR, "Toto je koniec"}' subor
+
+awk 'BEGIN{FIELDWIDTHS="3 3 3"}{print $2}' subor vypise druhy stlpec. fieldwidths definuje dlzku pola ak ho mam najpr cele jeden zlepeny string bez oddelovacov
+
+awk 'BEGIN{FIELDWIDTHS="3 3 3";print "Zoznam"; print "1\t2\t3"}{print $1"\t"$2"\t"$3}' subor
+
+awk 'BEGIN{FIELDWIDTHS="3 3 3";print "Zoznam"; print "1\t2\t3"}{print $1"\t"$2"\t"$3}END{print "Zaznamov\t", NR}' subor
+
+
+  
+
+
+

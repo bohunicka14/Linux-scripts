@@ -1,0 +1,33 @@
+test -e subor - otestuje ci existuje subor (nevypise nic)
+echo $? -vypise vysledok (0 je ok, ostatne je chyba)
+test -e subor && echo ano || echo nie  vypise ci existuje subor
+test -f subor  -testuje ci je to subor (-f = file)
+test -d adresar -testuje ci adresar je adresar (-d=directory)
+test -L vstup -testuje ci je vstup symbolic link
+test -O subor -testuje ci som Owner suboru
+test -G subor -testuje grupu
+test subor -nt subor2 -testuje ci je subor novsi ako subor2
+test subor -ot subor2 -testuje ci je subor starsi ako subor2
+test -s subor -testuje ci ma subor nenulovu velkost
+test -w subor -testuje ci mam pravo na write
+test -x subor -testuje ci mam pravo na execute
+test -r subor -testuje ci mam pravo na read
+
+poronavanie stringov
+
+test slovo = a otestuje ci sa slovo rovna znaku a
+test slovo != a
+test 1 \< 2 otestuje ci je 1 mensia ako 2
+test 3 -eq 3 otestuje ci sa 3 rovna 3
+test 3 -ne 3 otestuje ci sa 3 nerovna 3
+test 3 -gt 3 grater than
+test 3 -ge 3 greater or equal
+test 3 -lt 3 less than
+test 3 -le 3 less or equal
+test 3 -le 3 -a 2 -gt 1      3 less or equal 3 AND 2 greater than 1
+test 3 -le 3 -o 2 -gt 1      OR
+test -n hocico   otestuje ci je string nenulovy
+test -z hocico   otestuje ci je string nulovy
+test 1 -le 1  viem zapisat aj ako [ 1 -le 1 ]
+
+

@@ -1,0 +1,18 @@
+expr 2 + 2   vyhodnoti vyraz. musia byt medzery
+expr 5 \* 5  musi byt escape pre *
+expr $a \> $b porovnanie s escapom 
+expr 3 \* \( 2 + 1 \)
+expr 0 \| 1 
+expr 0 \& 1  
+expr 454 : 4  vrati pocet zhodnych znakov iduc od zaciatku
+expr length a  vrati dlzku znaku (medzeru treba escapovat alebo uvodozovky) 
+expr substr slovo 2 1    dvojka je pozicia a 1 je pocet
+expr index slovo znak   vrati poziciu akehokolvek znaku zo zadanych znakov  v retazci (vracia prve najdene)
+expr MojeDLheSlovo : ".*"  vrati pocet znakov
+expr match MojeDlheSlovo Moje  vrati 4
+expr match MojeDLheSlovo ".*DLhe" vrati 8
+expr MojeDlheSlovo : ".*\(.....\)" vrati poslednych 5 znakov
+expr MojeDlheSlovo : "\(.....\)" vrati prvych 5 znakov
+
+
+

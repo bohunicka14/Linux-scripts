@@ -1,0 +1,13 @@
+tr o a - zmena o za a
+tr oj ak - zmena o za a, a j za k
+tr a-j A-J
+tr [:lower:] [:upper:] - zmena z lower na upper
+tr " " "\n" - medzera za novy riadok
+tr -d a - odstrani a
+tr -d " " - ostrani medzeru
+tr -d [:digit:] - ostrani cisla
+tr -d [:alpha:] - ostrani pismena
+tr -d [:alnum:] - odstrani pismena aj cisla
+tr -d [:punct:] - ostrani znaky
+tr -d [:space:] - odstrani medzery
+tr -cd [:digit:] - odstrani vsetko okrem cisel
