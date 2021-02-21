@@ -18,7 +18,9 @@ read -p "Zadaj vysledok pre ${lave} ${znamienka[$random_znamienko_index]} ${prav
 
 if [[ $vysledok == $uzivatel_vysledok ]]
 then echo "Spravny vysledok!"
+result="True"
 else 
 ((rozdiel=$vysledok-$uzivatel_vysledok))
 echo "Nespravny vysledok, pomylil si sa o ${rozdiel}."
+result="False"
 fi
