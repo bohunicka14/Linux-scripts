@@ -1,0 +1,10 @@
+htpasswd -c .htpasswd jano   #prida heslo do suboru
+htpasswd -bn jano heslo   #vypise hash priamo na stdout pre usera jano
+	                  # -B bcrypt moznost
+			  # -C set the computing time of bcrypt
+
+htpasswd -bnBC 10 "" heslo  #vypise hash na stdout pre ziadneho usera
+
+sudo apt-get install pwgen
+
+pwgen 12 1 # vygeneruje jedno heslo s dlzkou 12 znakov
