@@ -22,5 +22,8 @@ heslo=$(date +%s | md5sum)
 heslo=$(date +%s | sha256sum)
 heslo=$(date +%s | sha256sum | base64)
 heslo=$(date +%s | sha256sum | base64 | head -c 18)
+echo $heslo
+hash=$(htpasswd -bnBC 10 "" $heslo)
+echo $hash
 
-od -An -N8 -to8 /dev/urandom | sha256sum | base64 | head -c 18
+# od -An -N8 -to8 /dev/urandom | sha256sum | base64 | head -c 18

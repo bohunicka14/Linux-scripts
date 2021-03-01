@@ -1,0 +1,8 @@
+echo $RANDOM
+
+echo $((RANDOM%20))   #vygeneruje nahodne cislo do 20
+echo $((RANDOM%20+1)) #vygenruje nahodne cislo od 1 do 20 vratane
+
+
+shuf -i 10-99  #vypise rozhadzane cisla od 10 do 99
+shuf -i 10-99 -n 1  #vypise len jedno nahodne cislo
